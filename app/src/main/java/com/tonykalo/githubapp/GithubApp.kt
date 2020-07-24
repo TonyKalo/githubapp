@@ -1,7 +1,7 @@
 package com.tonykalo.githubapp
 
-import com.tonykalo.githubapp.core.di.components.DaggerAppComponent
 import com.facebook.stetho.Stetho
+import com.tonykalo.githubapp.core.di.components.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector

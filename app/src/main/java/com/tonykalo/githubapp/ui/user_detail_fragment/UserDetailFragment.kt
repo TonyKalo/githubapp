@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.tonykalo.githubapp.R
-
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 
@@ -18,15 +17,11 @@ class UserDetailFragment : DaggerFragment() {
 
     private val mViewModel by viewModels<UserDetailViewModel> { viewModelFactory }
 
-
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_repo_detail, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
     }
-
 }

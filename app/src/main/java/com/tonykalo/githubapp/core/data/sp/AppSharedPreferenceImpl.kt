@@ -5,6 +5,4 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class AppSharedPreferenceImpl @Inject constructor(private val sp: SharedPreferences) : AppSharedPreference {
-
-}
+class AppSharedPreferenceImpl @Inject constructor(private val sp: SharedPreferences) : AppSharedPreference

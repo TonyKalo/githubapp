@@ -15,7 +15,6 @@ class MainActivity : DaggerAppCompatActivity() {
 
     private val mViewModel by viewModels<MainActivityViewModel> { viewModelFactory }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -29,6 +28,4 @@ class MainActivity : DaggerAppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         return findNavController(R.id.fhMain).navigateUp()
     }
-
-
 }

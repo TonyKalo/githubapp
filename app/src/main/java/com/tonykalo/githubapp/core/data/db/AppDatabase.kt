@@ -5,6 +5,4 @@ import androidx.room.RoomDatabase
 import com.tonykalo.githubapp.core.data.db.entity.EntityExample
 
 @Database(entities = [EntityExample::class], version = 1, exportSchema = false)
-abstract class AppDatabase : RoomDatabase() {
-
-}
+abstract class AppDatabase : RoomDatabase()

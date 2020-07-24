@@ -9,7 +9,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.tonykalo.githubapp.R
-
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 
@@ -20,7 +19,6 @@ class SplashFragment : DaggerFragment() {
 
     private val mViewModel by viewModels<SplashViewModel> { viewModelFactory }
 
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_splash, container, false)
     }
@@ -30,12 +28,11 @@ class SplashFragment : DaggerFragment() {
         setObservers()
     }
 
-    private fun setObservers(){
+    private fun setObservers() {
         mViewModel.navigateToMainScreen.observe(viewLifecycleOwner, Observer { navigateToMainScreen() })
     }
 
-    private fun navigateToMainScreen(){
+    private fun navigateToMainScreen() {
         findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToSearchFragment())
     }
-
 }

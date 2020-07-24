@@ -1,11 +1,11 @@
 package com.tonykalo.githubapp.core.di.module
 
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.tonykalo.githubapp.core.data.network.BASE_URL
 import com.tonykalo.githubapp.core.data.network.CONNECT_TIMEOUT_SECONDS
 import com.tonykalo.githubapp.core.data.network.READ_TIMEOUT_SECONDS
 import com.tonykalo.githubapp.core.data.network.WRITE_TIMEOUT_SECONDS
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import java.util.concurrent.TimeUnit

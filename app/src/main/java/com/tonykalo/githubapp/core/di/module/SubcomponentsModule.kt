@@ -27,7 +27,6 @@ import dagger.multibindings.IntoMap
 )
 abstract class SubcomponentsModule {
 
-
     @Binds
     @IntoMap
     @ClassKey(MainActivity::class)
@@ -52,6 +51,4 @@ abstract class SubcomponentsModule {
     @IntoMap
     @ClassKey(SplashFragment::class)
     abstract fun bindSplashFragmentInjectorFactory(factory: SplashComponent.Factory?): AndroidInjector.Factory<*>?
-
-
 }
