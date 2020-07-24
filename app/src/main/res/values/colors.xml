@@ -21,6 +21,9 @@
     <color name="txtMain">@color/colorPrimary</color>
     <color name="txtGrey">@color/colorGrey</color>
 
+    //loader
+    <color name="loaderMainLight">@color/colorWhite</color>
+
     //button
     //main
     <color name="btn_main">@color/colorPrimary</color>

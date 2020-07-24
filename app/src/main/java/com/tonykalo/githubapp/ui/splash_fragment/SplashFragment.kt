@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.tonykalo.githubapp.R
 
 import dagger.android.support.DaggerFragment
@@ -25,7 +27,15 @@ class SplashFragment : DaggerFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setObservers()
+    }
 
+    private fun setObservers(){
+        mViewModel.navigateToMainScreen.observe(viewLifecycleOwner, Observer { navigateToMainScreen() })
+    }
+
+    private fun navigateToMainScreen(){
+        findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToSearchFragment())
     }
 
 }
