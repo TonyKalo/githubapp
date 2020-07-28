@@ -9,4 +9,8 @@ class SearchRepoImpl @Inject constructor(private val sp: AppSharedPreference, pr
     override fun getSearchSortBy(): Int {
         return sp.getSortBy()
     }
+
+    override fun setSearchSortBy(choice: Int) {
+        sp.setSortBy(choice)
+    }
 }

@@ -14,6 +14,6 @@ class AppSharedPreferenceImpl @Inject constructor(private val sp: SharedPreferen
     }
 
     override fun getSortBy(): Int {
-        return sp.getInt(SORT_BY, 1)
+        return sp.getInt(SORT_BY, 0)
     }
 }
