@@ -13,7 +13,7 @@ class SplashViewModel @Inject constructor() : ViewModel() {
 
     init {
         viewModelScope.launch {
-            delay(3000)
+            delay(1000)
             navigateToMainScreen.call()
         }
     }

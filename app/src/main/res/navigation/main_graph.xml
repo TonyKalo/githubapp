@@ -17,7 +17,10 @@
             app:enterAnim="@anim/slide_in_left"
             app:exitAnim="@anim/slide_null"
             app:popEnterAnim="@anim/slide_null"
-            app:popExitAnim="@anim/slide_in_right"/>
+            app:popExitAnim="@anim/slide_in_right"
+            app:popUpTo="@+id/splashFragment"
+            app:popUpToInclusive="true"
+            />
     </fragment>
 
     <fragment
