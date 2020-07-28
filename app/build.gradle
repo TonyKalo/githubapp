@@ -39,6 +39,8 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:$constraintlayout"
     implementation "androidx.legacy:legacy-support-v4:$legacy_support_v4_version"
 
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swiperefreshlayout_version"
+
     //tests
     testImplementation "junit:junit:$junit_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
