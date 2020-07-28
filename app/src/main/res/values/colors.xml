@@ -24,6 +24,9 @@
     //loader
     <color name="loaderMainLight">@color/colorWhite</color>
 
+    //icon
+    <color name="iconMainLight">@color/colorWhite</color>
+
     //button
     //main
     <color name="btn_main">@color/colorPrimary</color>
