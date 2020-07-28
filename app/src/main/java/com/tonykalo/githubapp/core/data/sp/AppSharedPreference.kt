@@ -1,3 +1,7 @@
 package com.tonykalo.githubapp.core.data.sp
 
-interface AppSharedPreference
+interface AppSharedPreference {
+
+    fun setSortBy(sortBy: Int)
+    fun getSortBy(): Int
+}
