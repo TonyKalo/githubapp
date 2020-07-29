@@ -51,6 +51,7 @@ class SearchFragment : DaggerFragment() {
         mViewModel.openSortDialog.observe(viewLifecycleOwner, Observer { if (it != -1) openSortDialog(it) })
         mViewModel.handleError.observe(viewLifecycleOwner, Observer { showSnackbar(it) })
         mViewModel.githubRepos.observe(viewLifecycleOwner, Observer { it.log() })
+        mViewModel.showLoader.observe(viewLifecycleOwner, Observer { showSwipeLoader(it) })
     }
 
     private fun setOnClickListeners() {
@@ -69,7 +70,11 @@ class SearchFragment : DaggerFragment() {
             .show()
     }
 
-    fun showSnackbar(msg: String) {
+    private fun showSwipeLoader(show: Boolean) {
+        srlSearch.isRefreshing = show
+    }
+
+    private fun showSnackbar(msg: String) {
         Snackbar.make(requireActivity().findViewById(android.R.id.content), msg, Snackbar.LENGTH_LONG).show()
     }
 }

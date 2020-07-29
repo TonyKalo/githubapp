@@ -10,6 +10,8 @@ import com.tonykalo.githubapp.ui.search_fragment.data.SearchRepo
 import com.tonykalo.githubapp.ui.search_fragment.data.network.pojo.Item
 import com.tonykalo.githubapp.utils.helpers.SingleLiveEvent
 import javax.inject.Inject
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class SearchViewModel @Inject constructor(private val repo: SearchRepo) : ViewModel() {
@@ -18,11 +20,17 @@ class SearchViewModel @Inject constructor(private val repo: SearchRepo) : ViewMo
     private val _openSortDialog = MutableLiveData(-1)
     val openSortDialog: LiveData<Int> = _openSortDialog
 
+    private val _showLoader = MutableLiveData(false)
+    val showLoader: LiveData<Boolean> = _showLoader
+
     private val _githubRepos = MutableLiveData<List<Item>>()
     val githubRepos: LiveData<List<Item>> = _githubRepos
 
     private val _handleError = SingleLiveEvent<String>()
     val handleError = _handleError
+
+    var debouncePeriod: Long = 300
+    private var searchJob: Job? = null
 
     fun onSortClick() {
         _openSortDialog.value = repo.getSearchSortBy()
@@ -37,15 +45,19 @@ class SearchViewModel @Inject constructor(private val repo: SearchRepo) : ViewMo
     }
 
     fun onQueryTxtChange(query: String) {
+        searchJob?.cancel()
         if (query.isNotEmpty()) {
-            viewModelScope.launch {
+            _showLoader.value = true
+            searchJob = viewModelScope.launch {
+                delay(debouncePeriod)
                 repo.getGithubRepos(query).let {
+                    _showLoader.value = false
                     when (it) {
                         is Success -> _githubRepos.value = it.data
                         is Error -> _handleError.value = it.exception.localizedMessage
                     }
                 }
             }
-        }
+        } else _showLoader.value = false
     }
 }
