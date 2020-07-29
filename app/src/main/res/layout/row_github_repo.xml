@@ -9,11 +9,11 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/civUser"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,20 +29,24 @@
 
     <TextView
         android:id="@+id/tvRepo"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:textColor="@color/txtMainDark"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toEndOf="@+id/civUser"
         app:layout_constraintTop_toTopOf="@+id/civUser" />
 
     <TextView
-        android:id="@+id/tvUsermame"
-        android:layout_width="wrap_content"
+        android:id="@+id/tvUsername"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/ivForks"
         app:layout_constraintStart_toEndOf="@+id/civUser"
         app:layout_constraintTop_toBottomOf="@+id/tvRepo" />
 
@@ -77,42 +81,42 @@
         tools:ignore="ContentDescription" />
 
     <TextView
-        android:id="@+id/tvWachers"
-        android:layout_width="wrap_content"
+        android:id="@+id/tvWatchers"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
-        android:text="@string/row_watchers"
         android:textColor="@color/row_repo_watch"
         android:textSize="12sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ivWatchers"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvForks"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:text="@string/row_forks"
         android:textColor="@color/row_repo_forks"
         android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/tvIssues"
+        app:layout_constraintBottom_toBottomOf="@+id/ivForks"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ivForks"
-        app:layout_constraintTop_toBottomOf="@+id/tvWachers" />
+        app:layout_constraintTop_toTopOf="@+id/ivForks" />
 
     <TextView
         android:id="@+id/tvIssues"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/row_issues"
         android:textColor="@color/row_repo_issues"
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ivIssues" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -120,35 +124,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.62" />
+        app:layout_constraintGuide_percent="0.8" />
 
-    <TextView
-        android:id="@+id/tvWatchersNum"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvWachers"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvWachers"
-        app:layout_constraintTop_toTopOf="@+id/tvWachers" />
-
-    <TextView
-        android:id="@+id/tvForksNum"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvForks"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvForks"
-        app:layout_constraintTop_toTopOf="@+id/tvForks" />
-
-    <TextView
-        android:id="@+id/tvIssuesNum"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvIssues"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvIssues"
-        app:layout_constraintTop_toTopOf="@+id/tvIssues" />
 </androidx.constraintlayout.widget.ConstraintLayout>

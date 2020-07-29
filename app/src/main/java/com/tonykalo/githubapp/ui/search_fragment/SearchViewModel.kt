@@ -58,6 +58,9 @@ class SearchViewModel @Inject constructor(private val repo: SearchRepo) : ViewMo
                     }
                 }
             }
-        } else _showLoader.value = false
+        } else {
+            _githubRepos.value = listOf()
+            _showLoader.value = false
+        }
     }
 }

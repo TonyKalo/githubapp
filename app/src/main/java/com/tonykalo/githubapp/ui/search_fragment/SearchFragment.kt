@@ -9,9 +9,12 @@ import android.widget.SearchView
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.tonykalo.githubapp.R
-import com.tonykalo.githubapp.utils.extensions.log
+import com.tonykalo.githubapp.ui.search_fragment.adapter.GithubReposAdapter
+import com.tonykalo.githubapp.utils.extensions.makeGone
+import com.tonykalo.githubapp.utils.extensions.makeVisible
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 import kotlinx.android.synthetic.main.fragment_search.*
@@ -20,6 +23,9 @@ class SearchFragment : DaggerFragment() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
+
+    @Inject
+    lateinit var adapter: GithubReposAdapter
 
     private val mViewModel by viewModels<SearchViewModel> { viewModelFactory }
 
@@ -32,6 +38,16 @@ class SearchFragment : DaggerFragment() {
         setOnClickListeners()
         setQueryListener()
         setObservers()
+        initAll()
+    }
+
+    private fun initAll() {
+        initAdapter()
+        srlSearch.setOnRefreshListener { mViewModel.onQueryTxtChange(svSearch.query.toString()) }
+    }
+    private fun initAdapter() {
+        rvRepos.layoutManager = LinearLayoutManager(context)
+        rvRepos.adapter = adapter
     }
 
     private fun setQueryListener() {
@@ -42,6 +58,7 @@ class SearchFragment : DaggerFragment() {
 
             override fun onQueryTextChange(p0: String): Boolean {
                 mViewModel.onQueryTxtChange(p0)
+                showNoRepoFound(p0.isEmpty())
                 return true
             }
         })
@@ -50,7 +67,10 @@ class SearchFragment : DaggerFragment() {
     private fun setObservers() {
         mViewModel.openSortDialog.observe(viewLifecycleOwner, Observer { if (it != -1) openSortDialog(it) })
         mViewModel.handleError.observe(viewLifecycleOwner, Observer { showSnackbar(it) })
-        mViewModel.githubRepos.observe(viewLifecycleOwner, Observer { it.log() })
+        mViewModel.githubRepos.observe(viewLifecycleOwner, Observer {
+            adapter.setData(it)
+            showNoRepoFound(it.isNullOrEmpty())
+        })
         mViewModel.showLoader.observe(viewLifecycleOwner, Observer { showSwipeLoader(it) })
     }
 
@@ -64,6 +84,7 @@ class SearchFragment : DaggerFragment() {
             .setTitle(getString(R.string.title_sort_by))
             .setSingleChoiceItems(sortByList, selectedChoice) { dialog, which ->
                 mViewModel.onSelectedChoice(which)
+                mViewModel.onQueryTxtChange(svSearch.query.toString())
                 dialog.dismiss()
             }
             .setOnDismissListener { mViewModel.onDialogDismiss() }
@@ -77,4 +98,7 @@ class SearchFragment : DaggerFragment() {
     private fun showSnackbar(msg: String) {
         Snackbar.make(requireActivity().findViewById(android.R.id.content), msg, Snackbar.LENGTH_LONG).show()
     }
+
+    private fun showNoRepoFound(show: Boolean) {
+        if (show) tvNoReposFound.makeVisible() else tvNoReposFound.makeGone() }
 }
