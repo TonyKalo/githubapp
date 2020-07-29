@@ -10,4 +10,8 @@
     //TextViews
     <string name="tv_noQueryFound">No Github repositories found. Please enter search query again.</string>
 
+    //toolbars
+    <string name="tlb_owner">Owner</string>
+    <string name="tlb_repo">Repository</string>
+
 </resources>

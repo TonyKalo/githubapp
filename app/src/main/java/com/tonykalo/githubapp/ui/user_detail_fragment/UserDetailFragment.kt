@@ -7,11 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.tonykalo.githubapp.R
 import com.tonykalo.githubapp.ui.search_fragment.data.network.pojo.Owner
-import com.tonykalo.githubapp.utils.extensions.toast
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
+import kotlinx.android.synthetic.main.fragment_user_detail.*
 
 class UserDetailFragment : DaggerFragment() {
 
@@ -28,6 +29,11 @@ class UserDetailFragment : DaggerFragment() {
         super.onViewCreated(view, savedInstanceState)
         getArgs()
         setObservers()
+        setOnClickListeners()
+    }
+
+    private fun setOnClickListeners() {
+        btnBack.setOnClickListener { findNavController().popBackStack() }
     }
 
     private fun setObservers() {
@@ -38,6 +44,5 @@ class UserDetailFragment : DaggerFragment() {
     }
 
     private fun updateUI(owner: Owner) {
-        requireContext().toast(owner.login!!)
     }
 }

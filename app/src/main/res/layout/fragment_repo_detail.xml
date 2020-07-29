@@ -5,14 +5,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundMainLight"
     tools:context=".ui.repo_detail_fragment.RepoDetailFragment">
 
-    <TextView
-        android:id="@+id/textView2"
+    <View
+        android:id="@+id/tlbRepo"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="repo detail"
+        android:layout_height="@dimen/toolbar_main"
+        android:background="@color/backgroundMain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="@dimen/icon_main"
+        android:layout_height="@dimen/icon_main"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintBottom_toBottomOf="@+id/tlbRepo"
+        app:layout_constraintStart_toStartOf="@+id/tlbRepo"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tlbTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/tlb_repo"
+        android:textColor="@color/txtMainLight"
+        android:textSize="@dimen/toolbar_txt"
+        app:layout_constraintBottom_toBottomOf="@+id/tlbRepo"
+        app:layout_constraintStart_toEndOf="@+id/btnBack"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

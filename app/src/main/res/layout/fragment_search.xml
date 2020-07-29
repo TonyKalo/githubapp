@@ -25,7 +25,7 @@
     <View
         android:id="@+id/tlb_search"
         android:layout_width="wrap_content"
-        android:layout_height="64dp"
+        android:layout_height="@dimen/toolbar_main"
         android:background="@color/backgroundMain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
