@@ -18,7 +18,7 @@ class UserDetailFragment : DaggerFragment() {
     private val mViewModel by viewModels<UserDetailViewModel> { viewModelFactory }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_repo_detail, container, false)
+        return inflater.inflate(R.layout.fragment_user_detail, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -9,17 +9,21 @@ import android.widget.SearchView
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.tonykalo.githubapp.R
 import com.tonykalo.githubapp.ui.search_fragment.adapter.GithubReposAdapter
+import com.tonykalo.githubapp.ui.search_fragment.adapter.OnRepoClickListener
+import com.tonykalo.githubapp.ui.search_fragment.data.network.pojo.Item
+import com.tonykalo.githubapp.ui.search_fragment.data.network.pojo.Owner
 import com.tonykalo.githubapp.utils.extensions.makeGone
 import com.tonykalo.githubapp.utils.extensions.makeVisible
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 import kotlinx.android.synthetic.main.fragment_search.*
 
-class SearchFragment : DaggerFragment() {
+class SearchFragment : DaggerFragment(), OnRepoClickListener {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -48,6 +52,7 @@ class SearchFragment : DaggerFragment() {
     private fun initAdapter() {
         rvRepos.layoutManager = LinearLayoutManager(context)
         rvRepos.adapter = adapter
+        adapter.onClickListener = this
     }
 
     private fun setQueryListener() {
@@ -101,4 +106,12 @@ class SearchFragment : DaggerFragment() {
 
     private fun showNoRepoFound(show: Boolean) {
         if (show) tvNoReposFound.makeVisible() else tvNoReposFound.makeGone() }
+
+    override fun onUserClick(owner: Owner) {
+        findNavController().navigate(SearchFragmentDirections.actionSearchFragmentToUserDetailFragment(owner))
+    }
+
+    override fun onRepoClick(repo: Item) {
+        findNavController().navigate(SearchFragmentDirections.actionSearchFragmentToRepoDetailFragment(repo))
+    }
 }

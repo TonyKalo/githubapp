@@ -48,13 +48,21 @@
         android:id="@+id/repoDetailFragment"
         android:name="com.tonykalo.githubapp.ui.repo_detail_fragment.RepoDetailFragment"
         android:label="RepoDetailFragment"
-        tools:layout="@layout/fragment_repo_detail"/>
+        tools:layout="@layout/fragment_repo_detail">
+        <argument
+            android:name="item"
+            app:argType="com.tonykalo.githubapp.ui.search_fragment.data.network.pojo.Item" />
+    </fragment>
 
     <fragment
         android:id="@+id/userDetailFragment"
         android:name="com.tonykalo.githubapp.ui.user_detail_fragment.UserDetailFragment"
         android:label="UserDetailFragment"
-        tools:layout="@layout/fragment_user_detail"/>
+        tools:layout="@layout/fragment_user_detail">
+        <argument
+            android:name="owner"
+            app:argType="com.tonykalo.githubapp.ui.search_fragment.data.network.pojo.Owner" />
+    </fragment>
 
 
 </navigation>

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.tonykalo.githubapp.R
@@ -15,7 +16,8 @@ import kotlinx.android.synthetic.main.row_github_repo.view.*
 
 class GithubReposAdapter @Inject constructor(private val context: Context) : RecyclerView.Adapter<GithubReposAdapter.GithubReposViewHolder>() {
 
-    var repoList: List<Item> = emptyList()
+    private var repoList: List<Item> = emptyList()
+    var onClickListener: OnRepoClickListener? = null
 
     fun setData(repoList: List<Item>) {
         this.repoList = repoList
@@ -35,12 +37,14 @@ class GithubReposAdapter @Inject constructor(private val context: Context) : Rec
     override fun onBindViewHolder(holder: GithubReposViewHolder, position: Int) {
         holder.apply {
             repoList[position].apply {
-                tvUsername.text = owner.login
+                tvUsername.text = owner?.login
                 tvRepoName.text = name
                 tvWatchers.text = watchers_count.toString()
                 tvForks.text = forks.toString()
                 tvIssues.text = open_issues_count.toString()
-                Glide.with(context).asBitmap().load(owner.avatar_url).placeholder(R.drawable.github_logo).into(civUserImage)
+                Glide.with(context).asBitmap().load(owner?.avatar_url).placeholder(R.drawable.github_logo).into(civUserImage)
+                civUserImage.setOnClickListener { onClickListener?.onUserClick(owner!!) }
+                viewHolder.setOnClickListener { onClickListener?.onRepoClick(this) }
             }
         }
     }
@@ -52,5 +56,6 @@ class GithubReposAdapter @Inject constructor(private val context: Context) : Rec
         val tvWatchers: TextView = itemView.tvWatchers
         val tvForks: TextView = itemView.tvForks
         val tvIssues: TextView = itemView.tvIssues
+        val viewHolder: ConstraintLayout = itemView.clMainHolder
     }
 }
