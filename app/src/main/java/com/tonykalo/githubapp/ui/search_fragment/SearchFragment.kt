@@ -107,7 +107,7 @@ class SearchFragment : DaggerFragment(), OnRepoClickListener {
     private fun showNoRepoFound(show: Boolean) {
         if (show) tvNoReposFound.makeVisible() else tvNoReposFound.makeGone() }
 
-    override fun onUserClick(owner: Owner) {
+    override fun onUserClick(owner: Owner?) {
         findNavController().navigate(SearchFragmentDirections.actionSearchFragmentToUserDetailFragment(owner))
     }
 

@@ -61,7 +61,8 @@
         tools:layout="@layout/fragment_user_detail">
         <argument
             android:name="owner"
-            app:argType="com.tonykalo.githubapp.ui.search_fragment.data.network.pojo.Owner" />
+            app:argType="com.tonykalo.githubapp.ui.search_fragment.data.network.pojo.Owner"
+            app:nullable="true" />
     </fragment>
 
 

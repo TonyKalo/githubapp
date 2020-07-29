@@ -43,7 +43,7 @@ class GithubReposAdapter @Inject constructor(private val context: Context) : Rec
                 tvForks.text = forks.toString()
                 tvIssues.text = open_issues_count.toString()
                 Glide.with(context).asBitmap().load(owner?.avatar_url).placeholder(R.drawable.github_logo).into(civUserImage)
-                civUserImage.setOnClickListener { onClickListener?.onUserClick(owner!!) }
+                civUserImage.setOnClickListener { onClickListener?.onUserClick(owner) }
                 viewHolder.setOnClickListener { onClickListener?.onRepoClick(this) }
             }
         }
