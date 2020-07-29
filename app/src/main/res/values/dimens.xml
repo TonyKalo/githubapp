@@ -7,6 +7,7 @@
     <dimen name="tv_main">14sp</dimen>
 
     <dimen name="icon_main">36dp</dimen>
+        <dimen name="icon_min">16dp</dimen>
 
     <dimen name="btn_main_transparent_outline">6dp</dimen>
     <dimen name="btn_radius_main">16dp</dimen>

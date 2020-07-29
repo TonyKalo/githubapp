@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_main_holder"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.user_detail_fragment.UserDetailFragment">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/civUser"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:background="@color/backgroundGray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvRepo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/txtMainDark"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/civUser"
+        app:layout_constraintTop_toTopOf="@+id/civUser" />
+
+    <TextView
+        android:id="@+id/tvUsermame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/civUser"
+        app:layout_constraintTop_toBottomOf="@+id/tvRepo" />
+
+    <ImageView
+        android:id="@+id/ivWatchers"
+        android:layout_width="@dimen/icon_min"
+        android:layout_height="@dimen/icon_min"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_visibility"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/ivForks"
+        android:layout_width="@dimen/icon_min"
+        android:layout_height="@dimen/icon_min"
+        android:src="@drawable/ic_forks"
+        app:layout_constraintBottom_toTopOf="@+id/ivIssues"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/ivWatchers"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/ivIssues"
+        android:layout_width="@dimen/icon_min"
+        android:layout_height="@dimen/icon_min"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_error_outline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tvWachers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/row_watchers"
+        android:textColor="@color/row_repo_watch"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/ivWatchers"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvForks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="@string/row_forks"
+        android:textColor="@color/row_repo_forks"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvIssues"
+        app:layout_constraintStart_toEndOf="@+id/ivForks"
+        app:layout_constraintTop_toBottomOf="@+id/tvWachers" />
+
+    <TextView
+        android:id="@+id/tvIssues"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/row_issues"
+        android:textColor="@color/row_repo_issues"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivIssues" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.62" />
+
+    <TextView
+        android:id="@+id/tvWatchersNum"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvWachers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvWachers"
+        app:layout_constraintTop_toTopOf="@+id/tvWachers" />
+
+    <TextView
+        android:id="@+id/tvForksNum"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvForks"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvForks"
+        app:layout_constraintTop_toTopOf="@+id/tvForks" />
+
+    <TextView
+        android:id="@+id/tvIssuesNum"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvIssues"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvIssues"
+        app:layout_constraintTop_toTopOf="@+id/tvIssues" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -84,5 +84,8 @@ dependencies {
     //Facebook Stetho
     implementation "com.facebook.stetho:stetho:$stetho_version"
 
+    //circle view
+    implementation "de.hdodenhof:circleimageview:$circle_view"
+
 
 }

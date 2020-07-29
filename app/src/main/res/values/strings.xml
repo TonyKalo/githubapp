@@ -7,4 +7,8 @@
     <string name="tv_updated">Updated</string>
     <string name="title_sort_by">SORT RESULTS BY:</string>
 
+    <string name="row_watchers">Watchers -</string>
+    <string name="row_forks">Forks -</string>
+    <string name="row_issues">Issues -</string>
+
 </resources>

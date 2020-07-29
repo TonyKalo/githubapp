@@ -8,6 +8,10 @@
     <color name="colorBlack">#000000</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorGrey">#B8B8B8</color>
+    <color name="colorBlue">#2196F3</color>
+    <color name="colorGreen">#4CAF50</color>
+    <color name="colorRed">#F44336</color>
+
 
     //background
     <color name="backgroundMainDark">@color/colorBlack</color>
@@ -26,6 +30,11 @@
 
     //icon
     <color name="iconMainLight">@color/colorWhite</color>
+
+    //row githubRepo
+    <color name="row_repo_watch">@color/colorBlue</color>
+    <color name="row_repo_forks">@color/colorGreen</color>
+    <color name="row_repo_issues">@color/colorRed</color>
 
     //button
     //main
