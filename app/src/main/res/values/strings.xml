@@ -9,6 +9,14 @@
 
     //TextViews
     <string name="tv_noQueryFound">No Github repositories found. Please enter search query again.</string>
+    <string name="tv_join">Join at Github:</string>
+    <string name="tv_email">Email:</string>
+    <string name="tv_email_user">Company:</string>
+    <string name="tv_public_repos">Public repos:</string>
+    <string name="tv_followers">Followers:</string>
+
+    //Buttons
+    <string name="btn_open_in_external_browser">Open in external browser</string>
 
     //toolbars
     <string name="tlb_owner">Owner</string>
