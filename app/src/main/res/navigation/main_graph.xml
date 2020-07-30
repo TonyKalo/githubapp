@@ -50,8 +50,8 @@
         android:label="RepoDetailFragment"
         tools:layout="@layout/fragment_repo_detail">
         <argument
-            android:name="item"
-            app:argType="com.tonykalo.githubapp.ui.search_fragment.data.network.pojo.Item" />
+            android:name="repoUrl"
+            app:argType="string" />
     </fragment>
 
     <fragment
@@ -60,9 +60,8 @@
         android:label="UserDetailFragment"
         tools:layout="@layout/fragment_user_detail">
         <argument
-            android:name="owner"
-            app:argType="com.tonykalo.githubapp.ui.search_fragment.data.network.pojo.Owner"
-            app:nullable="true" />
+            android:name="ownerUrl"
+            app:argType="string" />
     </fragment>
 
 

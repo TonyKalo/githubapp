@@ -5,11 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.tonykalo.githubapp.R
-import com.tonykalo.githubapp.ui.search_fragment.data.network.pojo.Item
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 import kotlinx.android.synthetic.main.fragment_user_detail.*
@@ -37,12 +35,8 @@ class RepoDetailFragment : DaggerFragment() {
     }
 
     private fun setObservers() {
-        mViewModel.githubRepos.observe(viewLifecycleOwner, Observer { updateUI(it) })
     }
     private fun getArgs() {
-        mViewModel.setRepos(arguments?.get("item") as Item)
-    }
-
-    private fun updateUI(repo: Item) {
+        mViewModel.setRepoUrl(arguments?.get("repoUrl") as String)
     }
 }

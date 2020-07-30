@@ -15,8 +15,6 @@ import com.google.android.material.snackbar.Snackbar
 import com.tonykalo.githubapp.R
 import com.tonykalo.githubapp.ui.search_fragment.adapter.GithubReposAdapter
 import com.tonykalo.githubapp.ui.search_fragment.adapter.OnRepoClickListener
-import com.tonykalo.githubapp.ui.search_fragment.data.network.pojo.Item
-import com.tonykalo.githubapp.ui.search_fragment.data.network.pojo.Owner
 import com.tonykalo.githubapp.utils.extensions.makeGone
 import com.tonykalo.githubapp.utils.extensions.makeVisible
 import dagger.android.support.DaggerFragment
@@ -107,11 +105,11 @@ class SearchFragment : DaggerFragment(), OnRepoClickListener {
     private fun showNoRepoFound(show: Boolean) {
         if (show) tvNoReposFound.makeVisible() else tvNoReposFound.makeGone() }
 
-    override fun onUserClick(owner: Owner?) {
-        findNavController().navigate(SearchFragmentDirections.actionSearchFragmentToUserDetailFragment(owner))
+    override fun onUserClick(ownerUrl: String) {
+        findNavController().navigate(SearchFragmentDirections.actionSearchFragmentToUserDetailFragment(ownerUrl))
     }
 
-    override fun onRepoClick(repo: Item) {
-        findNavController().navigate(SearchFragmentDirections.actionSearchFragmentToRepoDetailFragment(repo))
+    override fun onRepoClick(repoUrl: String) {
+        findNavController().navigate(SearchFragmentDirections.actionSearchFragmentToRepoDetailFragment(repoUrl))
     }
 }

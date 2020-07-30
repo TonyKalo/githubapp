@@ -37,14 +37,14 @@ class GithubReposAdapter @Inject constructor(private val context: Context) : Rec
     override fun onBindViewHolder(holder: GithubReposViewHolder, position: Int) {
         holder.apply {
             repoList[position].apply {
-                tvUsername.text = owner?.login
+                tvUsername.text = owner.login
                 tvRepoName.text = name
                 tvWatchers.text = watchers_count.toString()
                 tvForks.text = forks.toString()
                 tvIssues.text = open_issues_count.toString()
-                Glide.with(context).asBitmap().load(owner?.avatar_url).placeholder(R.drawable.github_logo).into(civUserImage)
-                civUserImage.setOnClickListener { onClickListener?.onUserClick(owner) }
-                viewHolder.setOnClickListener { onClickListener?.onRepoClick(this) }
+                Glide.with(context).asBitmap().load(owner.avatar_url).placeholder(R.drawable.github_logo).into(civUserImage)
+                civUserImage.setOnClickListener { onClickListener?.onUserClick(owner.url) }
+                viewHolder.setOnClickListener { onClickListener?.onRepoClick(url) }
             }
         }
     }
