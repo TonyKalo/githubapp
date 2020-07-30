@@ -33,7 +33,7 @@ class UserDetailFragment : DaggerFragment() {
         getArgs()
         setObservers()
         setOnClickListeners()
-        initLoader()
+//        initLoader()
     }
 
     private fun initLoader() {
@@ -47,6 +47,7 @@ class UserDetailFragment : DaggerFragment() {
     private fun setObservers() {
         mViewModel.ownerData.observe(viewLifecycleOwner, Observer { updateUI(it) })
         mViewModel.handleError.observe(viewLifecycleOwner, Observer { showSnackbar(it) })
+        mViewModel.showLoader.observe(viewLifecycleOwner, Observer { })
     }
     private fun getArgs() {
         mViewModel.setOwnerUrl(arguments?.get("ownerUrl") as String)
