@@ -8,7 +8,7 @@
     <string name="title_sort_by">SORT RESULTS BY:</string>
 
     //TextViews
-    <string name="tv_noQueryFound">No Github repositories found. Please enter search query again.</string>
+    <string name="tv_noQueryFound">No Github repositories found. Please search again.</string>
     <string name="tv_join">Join at Github:</string>
     <string name="tv_email">Email:</string>
     <string name="tv_email_user">Company:</string>

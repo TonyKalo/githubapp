@@ -52,6 +52,13 @@
         <argument
             android:name="repoUrl"
             app:argType="string" />
+        <action
+            android:id="@+id/action_repoDetailFragment_to_userDetailFragment"
+            app:destination="@id/userDetailFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_null"
+            app:popEnterAnim="@anim/slide_null"
+            app:popExitAnim="@anim/slide_in_right"/>
     </fragment>
 
     <fragment

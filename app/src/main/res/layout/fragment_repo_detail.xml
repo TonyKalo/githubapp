@@ -2,6 +2,7 @@
 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/srlRepoDetail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.repo_detail_fragment.RepoDetailFragment">
@@ -225,7 +226,7 @@
             app:layout_constraintTop_toBottomOf="@+id/incOwner" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnExternal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
