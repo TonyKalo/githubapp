@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Github</string>
+    <string name="app_name">Github repo search</string>
 
     //Dialogs
     <string name="tv_stars">Stars</string>
