@@ -10,8 +10,8 @@
     tools:context=".ui.user_detail_fragment.UserDetailFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@color/backgroundMainLight"
         tools:context=".ui.user_detail_fragment.UserDetailFragment">
 
