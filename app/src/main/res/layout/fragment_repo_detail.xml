@@ -64,6 +64,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             android:text="@string/tv_language"
+            android:textColor="@color/txtMainDark"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvRepoName" />
 
@@ -83,6 +85,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/tv_created"
+            android:textColor="@color/txtMainDark"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvLanguageTitle" />
 
@@ -102,6 +106,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/tv_title_updated"
+            android:textColor="@color/txtMainDark"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvCreatedTitle" />
 
@@ -121,6 +127,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/tv_watchers"
+            android:textColor="@color/txtMainDark"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvUpdatedTitle" />
 
@@ -140,6 +148,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/tv_title_forks"
+            android:textColor="@color/txtMainDark"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvWatcheritle" />
 
@@ -159,6 +169,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/tv_issues"
+            android:textColor="@color/txtMainDark"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvForksTitle" />
 
@@ -178,6 +190,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/tv_owner"
+            android:textColor="@color/txtMainDark"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvIssuesTitle" />
 
