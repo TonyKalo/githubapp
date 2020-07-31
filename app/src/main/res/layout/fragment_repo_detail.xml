@@ -1,42 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundMainLight"
     tools:context=".ui.repo_detail_fragment.RepoDetailFragment">
 
-    <View
-        android:id="@+id/tlbRepo"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/toolbar_main"
-        android:background="@color/backgroundMain"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
 
-    <ImageView
-        android:id="@+id/btnBack"
-        android:layout_width="@dimen/icon_main"
-        android:layout_height="@dimen/icon_main"
-        android:layout_marginStart="16dp"
-        android:src="@drawable/ic_back"
-        app:layout_constraintBottom_toBottomOf="@+id/tlbRepo"
-        app:layout_constraintStart_toStartOf="@+id/tlbRepo"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundMainLight"
+        tools:context=".ui.repo_detail_fragment.RepoDetailFragment">
 
-    <TextView
-        android:id="@+id/tlbTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="@string/tlb_repo"
-        android:textColor="@color/txtMainLight"
-        android:textSize="@dimen/toolbar_txt"
-        app:layout_constraintBottom_toBottomOf="@+id/tlbRepo"
-        app:layout_constraintStart_toEndOf="@+id/btnBack"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:id="@+id/tlbRepo"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/toolbar_main"
+            android:background="@color/backgroundMain"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/icon_main"
+            android:layout_height="@dimen/icon_main"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="@+id/tlbRepo"
+            app:layout_constraintStart_toStartOf="@+id/tlbRepo"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tlbTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/tlb_repo"
+            android:textColor="@color/txtMainLight"
+            android:textSize="@dimen/toolbar_txt"
+            app:layout_constraintBottom_toBottomOf="@+id/tlbRepo"
+            app:layout_constraintStart_toEndOf="@+id/btnBack"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvRepoName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:textColor="@color/txtMainDark"
+            android:textSize="@dimen/tv_title"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tlbRepo" />
+
+        <TextView
+            android:id="@+id/tvLanguageTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/tv_language"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvRepoName" />
+
+        <TextView
+            android:id="@+id/tvLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvLanguageTitle"
+            app:layout_constraintStart_toEndOf="@+id/tvLanguageTitle"
+            app:layout_constraintTop_toTopOf="@+id/tvLanguageTitle" />
+
+        <TextView
+            android:id="@+id/tvCreatedTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/tv_created"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvLanguageTitle" />
+
+        <TextView
+            android:id="@+id/tvCreated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvCreatedTitle"
+            app:layout_constraintStart_toEndOf="@+id/tvCreatedTitle"
+            app:layout_constraintTop_toTopOf="@+id/tvCreatedTitle" />
+
+        <TextView
+            android:id="@+id/tvUpdatedTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/tv_title_updated"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCreatedTitle" />
+
+        <TextView
+            android:id="@+id/tvUpdated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvUpdatedTitle"
+            app:layout_constraintStart_toEndOf="@+id/tvUpdatedTitle"
+            app:layout_constraintTop_toTopOf="@+id/tvUpdatedTitle" />
+
+        <TextView
+            android:id="@+id/tvWatcheritle"
+            android:layout_width="62dp"
+            android:layout_height="17dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/tv_watchers"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvUpdatedTitle" />
+
+        <TextView
+            android:id="@+id/tvWatchers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvWatcheritle"
+            app:layout_constraintStart_toEndOf="@+id/tvWatcheritle"
+            app:layout_constraintTop_toTopOf="@+id/tvWatcheritle" />
+
+        <TextView
+            android:id="@+id/tvForksTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/tv_title_forks"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvWatcheritle" />
+
+        <TextView
+            android:id="@+id/tvForks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvForksTitle"
+            app:layout_constraintStart_toEndOf="@+id/tvForksTitle"
+            app:layout_constraintTop_toTopOf="@+id/tvForksTitle" />
+
+        <TextView
+            android:id="@+id/tvIssuesTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/tv_issues"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvForksTitle" />
+
+        <TextView
+            android:id="@+id/tvIssues"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvIssuesTitle"
+            app:layout_constraintStart_toEndOf="@+id/tvIssuesTitle"
+            app:layout_constraintTop_toTopOf="@+id/tvIssuesTitle" />
+
+        <TextView
+            android:id="@+id/tvOwnerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/tv_owner"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvIssuesTitle" />
+
+        <View
+            android:id="@+id/separator1"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/backgroundGray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvOwnerTitle" />
+
+        <include
+            android:id="@+id/incOwner"
+            layout="@layout/row_user"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/separator1"/>
+
+        <View
+            android:id="@+id/separator2"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="@color/backgroundGray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/incOwner" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/btn_main_big"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/btn_open_in_external_browser"
+            android:textColor="@color/txtMainLight"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

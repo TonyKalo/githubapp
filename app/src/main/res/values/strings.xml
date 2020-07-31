@@ -14,6 +14,13 @@
     <string name="tv_email_user">Company:</string>
     <string name="tv_public_repos">Public repos:</string>
     <string name="tv_followers">Followers:</string>
+    <string name="tv_language">Language:</string>
+    <string name="tv_created">Created:</string>
+    <string name="tv_title_updated">Updated:</string>
+    <string name="tv_watchers">Watchers:</string>
+    <string name="tv_title_forks">Forks:</string>
+    <string name="tv_issues">Issues:</string>
+    <string name="tv_owner">Owner:</string>
 
     //Buttons
     <string name="btn_open_in_external_browser">Open in external browser</string>
